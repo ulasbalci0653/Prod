@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-black: #090909;
+    --bg-soft-black: #111111;
+    --bg-charcoal: #171717;
+    --prod-red: #A51F24;
+    --deep-red: #791519;
+    --accent-red: #C3282D;
+    --coffee-brown: #3A251D;
+    --warm-cream: #F1EBDD;
+    --muted-cream: #D8D0C1;
+    --white: #F8F7F3;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-black);
+    color: var(--white);
+    font-family: var(--font-inter), sans-serif;
+  }
+
+  body {
+    background-color: var(--bg-black);
+    color: var(--white);
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--prod-red);
+    color: var(--white);
+  }
+}
+
+.font-heading {
+  font-family: var(--font-oswald), sans-serif;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #090909;
+}
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A51F24;
+}
+
+/* Glassmorphism & Glow Utilities */
+.glass-nav {
+  background: rgba(9, 9, 9, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.radial-glow-red {
+  background: radial-gradient(circle, rgba(165, 31, 36, 0.22) 0%, rgba(9, 9, 9, 0) 70%);
+}
+
+.radial-glow-bottle {
+  background: radial-gradient(circle, rgba(195, 40, 45, 0.28) 0%, rgba(121, 21, 25, 0.12) 40%, rgba(9, 9, 9, 0) 75%);
+}
+
+.grain-texture {
+  background-image: radial-gradient(rgba(241, 235, 221, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Marquee Ticker */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}
+
+/* Custom Border Details */
+.border-prod-red {
+  border-color: #A51F24;
+}
+
+.border-subtle {
+  border-color: rgba(241, 235, 221, 0.12);
+}
