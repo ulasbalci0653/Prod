@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Menu, X, Navigation } from 'lucide-react';
+import { Menu, X, Navigation, Instagram } from 'lucide-react';
 import { NAV_LINKS, STORE_INFO } from '@/lib/constants';
 
 export default function Navbar() {
@@ -61,16 +61,26 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Action CTA & Mobile Toggle */}
-          <div className="flex items-center gap-4">
+          {/* Action CTAs & Mobile Toggle */}
+          <div className="flex items-center gap-3">
             <a
               href={STORE_INFO.maps.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-[#A51F24] text-white font-heading text-xs uppercase tracking-widest hover:bg-[#80181C] transition-all transform hover:-translate-y-0.5 active:translate-y-0 shadow-md border border-[#A51F24]"
+              className="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 bg-[#A51F24] text-white font-heading text-xs uppercase tracking-widest hover:bg-[#80181C] transition-all transform hover:-translate-y-0.5 active:translate-y-0 shadow-md border border-[#A51F24]"
             >
               <Navigation className="w-3.5 h-3.5 text-white" />
               <span>YOL TARİFİ</span>
+            </a>
+
+            <a
+              href={STORE_INFO.instagram.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 bg-[#FFFFFF] hover:bg-[#221C19] text-[#221C19] hover:text-white font-heading text-xs uppercase tracking-widest border border-[#E2DACB] hover:border-[#221C19] transition-all transform hover:-translate-y-0.5 active:translate-y-0 shadow-sm group"
+            >
+              <Instagram className="w-3.5 h-3.5 text-[#A51F24] group-hover:text-white transition-colors" />
+              <span>INSTAGRAM</span>
             </a>
 
             {/* Mobile Hamburger Button */}
@@ -105,7 +115,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="flex flex-col space-y-4 pt-6 border-t border-[#E2DACB]">
+          <div className="flex flex-col space-y-3 pt-6 border-t border-[#E2DACB]">
             <a
               href={STORE_INFO.maps.url}
               target="_blank"
@@ -116,7 +126,19 @@ export default function Navbar() {
               <Navigation className="w-4 h-4" />
               <span>YOL TARİFİ AL</span>
             </a>
-            <div className="text-center text-xs text-[#554C47] font-mono">
+
+            <a
+              href={STORE_INFO.instagram.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full text-center py-3.5 bg-[#FFFFFF] hover:bg-[#221C19] text-[#221C19] hover:text-white border border-[#E2DACB] font-heading tracking-widest text-sm uppercase flex items-center justify-center gap-2 shadow-sm"
+            >
+              <Instagram className="w-4 h-4 text-[#A51F24]" />
+              <span>INSTAGRAM</span>
+            </a>
+
+            <div className="text-center text-xs text-[#554C47] font-mono pt-1">
               Bahçelievler 49. Sk. No:14 • Çankaya / Ankara
             </div>
           </div>
